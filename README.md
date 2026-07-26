@@ -9,7 +9,8 @@ My personal dotfiles. Each tool gets its own subfolder with its config and a REA
 
 ```bash
 # General
-export NONINTERACTIVE=1 # auto-accept brew install prompts
+# Auto-accept brew install prompts
+export NONINTERACTIVE=1
 mkdir -p ~/repos
 cd ~/repos
 [ -d dotfiles ] || git clone https://github.com/BenjaminOmar/dotfiles.git
