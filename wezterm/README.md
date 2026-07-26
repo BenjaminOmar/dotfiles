@@ -1,6 +1,6 @@
 # wezterm
 
-My personal WezTerm config. Theming and quality-of-life tweaks — no custom keybinds.
+My personal WezTerm config. Theming and quality-of-life tweaks.
 
 ## Notes
 
