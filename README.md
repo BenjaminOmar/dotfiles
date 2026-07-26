@@ -9,6 +9,7 @@ My personal dotfiles. Each tool gets its own subfolder with its config and a REA
 
 ```bash
 # General
+export NONINTERACTIVE=1 # auto-accept brew install prompts
 mkdir -p ~/repos
 cd ~/repos
 [ -d dotfiles ] || git clone https://github.com/BenjaminOmar/dotfiles.git
@@ -20,6 +21,7 @@ rm -f ~/.tmux.conf
 ln -s ~/repos/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 
 # wezterm
+brew install --cask wezterm
 brew install --cask font-hack-nerd-font
 rm -f ~/.wezterm.lua
 ln -s ~/repos/dotfiles/wezterm/.wezterm.lua ~/.wezterm.lua
