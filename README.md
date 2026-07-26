@@ -10,7 +10,7 @@ My personal dotfiles. Each tool gets its own subfolder with its config and a REA
 # General
 mkdir -p ~/repos
 cd ~/repos
-git clone https://github.com/BenjaminOmar/dotfiles.git
+[ -d dotfiles ] || git clone https://github.com/BenjaminOmar/dotfiles.git
 cd dotfiles
 
 # tmux
