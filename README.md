@@ -15,6 +15,7 @@ cd ~/repos
 cd dotfiles
 
 # tmux
+brew install tmux
 rm -f ~/.tmux.conf
 ln -s ~/repos/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 

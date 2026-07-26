@@ -2,6 +2,12 @@
 
 My personal tmux setup. Keybinds, theming, and quality-of-life stuff.
 
+## Dependencies
+
+| Dependency | Install |
+|---|---|
+| tmux | `brew install tmux` |
+
 ## Cheatsheet
 
 | Action | Shortcut |
