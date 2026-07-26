@@ -2,6 +2,13 @@
 
 My personal WezTerm config. Theming and quality-of-life tweaks.
 
+## Dependencies
+
+| Dependency | Install |
+|---|---|
+| WezTerm | `brew install --cask wezterm` |
+| Hack Nerd Font | `brew install --cask font-hack-nerd-font` |
+
 ## Notes
 
 - Color scheme: `rose-pine-moon`

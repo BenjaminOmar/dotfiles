@@ -19,6 +19,7 @@ rm -f ~/.tmux.conf
 ln -s ~/repos/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 
 # wezterm
+brew install --cask font-hack-nerd-font
 rm -f ~/.wezterm.lua
 ln -s ~/repos/dotfiles/wezterm/.wezterm.lua ~/.wezterm.lua
 ```
