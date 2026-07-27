@@ -1,7 +1,8 @@
 # rose-pine-moon colorscheme for micro
 # Based on https://rosepinetheme.com/palette/moon
+# Background colors omitted so WezTerm transparency shows through
 
-color-link default "#e0def4,#232136"
+color-link default "#e0def4"
 color-link keyword "#c4a7e7"
 color-link keyword.constant "#eb6f92"
 color-link keyword.operator "#908caa"
@@ -37,7 +38,7 @@ color-link statusline "#393552,#e0def4"
 color-link statusline.inactive "#2a273f,#6e6a86"
 color-link tabbar "#2a273f,#e0def4"
 color-link divider "#393552"
-color-link cursor "#908caa,#232136"
+color-link cursor "#908caa"
 color-link selection "#393552"
 color-link color-column "#2a273f"
 color-link matchbrace "#393552,#e0def4"
