@@ -22,8 +22,8 @@ My personal tmux setup. Keybinds, theming, and quality-of-life stuff.
 | Detach session | `[Ctrl+f/j] + d` |
 | Destroy pane | `[Ctrl+f/j] + x` / `exit` |
 | Create window | `[Ctrl+f/j] + c` |
-| Previous window | `Shift + ←` |
-| Next window | `Shift + →` |
+| Previous window | `Shift + option + ←` |
+| Next window | `Shift + option + →` |
 | Kill window | `[Ctrl+f/j] + &` |
 | Rename window | `[Ctrl+f/j] + ,` |
 | Reorder window | `Ctrl+Shift + ←/→` |
