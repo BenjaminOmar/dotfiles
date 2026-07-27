@@ -27,6 +27,17 @@ config.inactive_pane_hsb = {
   brightness = 0.5,
 }
 
+-- Map Shift+Arrow to xterm escape sequences that micro understands
+-- for text selection (SelectUp/SelectDown/SelectRight/SelectLeft)
+local act = wezterm.action
+config.key_map_preference = "Physical"
+config.keys = {
+  { key = "Up", mods = "SHIFT", action = act.SendString("\x1b[1;2A") },
+  { key = "Down", mods = "SHIFT", action = act.SendString("\x1b[1;2B") },
+  { key = "Right", mods = "SHIFT", action = act.SendString("\x1b[1;2C") },
+  { key = "Left", mods = "SHIFT", action = act.SendString("\x1b[1;2D") },
+}
+
 if is_windows then
   config.win32_system_backdrop = "Acrylic"
   config.window_background_opacity = 0.7

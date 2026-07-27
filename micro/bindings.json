@@ -1,7 +1,3 @@
 {
-    "Ctrl-b": "lua:filemanager.smart_toggle",
-    "[1;2A": "SelectUp",
-    "[1;2B": "SelectDown",
-    "[1;2C": "SelectRight",
-    "[1;2D": "SelectLeft"
+    "Ctrl-b": "lua:filemanager.smart_toggle"
 }
