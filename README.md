@@ -4,6 +4,7 @@ My personal dotfiles. Each tool gets its own subfolder with its config and a REA
 
 - [`tmux/`](tmux/) — tmux config and cheatsheet
 - [`wezterm/`](wezterm/) — WezTerm config
+- [`micro/`](micro/) — micro editor config
 
 ## Setup
 
@@ -26,4 +27,9 @@ brew install --cask wezterm
 brew install --cask font-hack-nerd-font
 rm -f ~/.wezterm.lua
 ln -s ~/repos/dotfiles/wezterm/.wezterm.lua ~/.wezterm.lua
+
+# micro
+brew install micro
+rm -f ~/.config/micro/bindings.json
+ln -s ~/repos/dotfiles/micro/bindings.json ~/.config/micro/bindings.json
 ```
