@@ -29,7 +29,7 @@ rm -f ~/.wezterm.lua
 ln -s ~/repos/dotfiles/wezterm/.wezterm.lua ~/.wezterm.lua
 
 # nvim
-brew install neovim
+brew install neovim tree-sitter
 rm -rf ~/.config/nvim
 ln -s ~/repos/dotfiles/nvim ~/.config/nvim
 ```
