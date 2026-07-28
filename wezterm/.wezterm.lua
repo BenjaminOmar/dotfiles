@@ -31,10 +31,10 @@ config.inactive_pane_hsb = {
 -- for text selection (SelectUp/SelectDown/SelectRight/SelectLeft)
 local act = wezterm.action
 config.keys = {
-  { key = "Up", mods = "SHIFT", action = act.SendString("\x1b[1;2A") },
-  { key = "Down", mods = "SHIFT", action = act.SendString("\x1b[1;2B") },
-  { key = "Right", mods = "SHIFT", action = act.SendString("\x1b[1;2C") },
-  { key = "Left", mods = "SHIFT", action = act.SendString("\x1b[1;2D") },
+  { key = "UpArrow", mods = "SHIFT", action = act.SendString("\x1b[1;2A") },
+  { key = "DownArrow", mods = "SHIFT", action = act.SendString("\x1b[1;2B") },
+  { key = "RightArrow", mods = "SHIFT", action = act.SendString("\x1b[1;2C") },
+  { key = "LeftArrow", mods = "SHIFT", action = act.SendString("\x1b[1;2D") },
 }
 
 if is_windows then
