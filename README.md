@@ -4,7 +4,7 @@ My personal dotfiles. Each tool gets its own subfolder with its config and a REA
 
 - [`tmux/`](tmux/) — tmux config and cheatsheet
 - [`wezterm/`](wezterm/) — WezTerm config
-- [`micro/`](micro/) — micro editor config
+- [`nvim/`](nvim/) — neovim config (kickstart-based)
 
 ## Setup
 
@@ -28,8 +28,8 @@ brew install --cask font-hack-nerd-font
 rm -f ~/.wezterm.lua
 ln -s ~/repos/dotfiles/wezterm/.wezterm.lua ~/.wezterm.lua
 
-# micro
-brew install micro
-rm -f ~/.config/micro/bindings.json
-ln -s ~/repos/dotfiles/micro/bindings.json ~/.config/micro/bindings.json
+# nvim
+brew install neovim
+rm -rf ~/.config/nvim
+ln -s ~/repos/dotfiles/nvim ~/.config/nvim
 ```
