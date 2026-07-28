@@ -242,6 +242,7 @@ do
   })
   vim.keymap.set({ 'n', 'i' }, '<C-s>', '<Esc>:w<CR>', { desc = 'Save file' })
   vim.keymap.set('n', '<C-q>', ':q<CR>', { desc = 'Quit neovim' })
+  vim.keymap.set({ 'n', 'i' }, '<C-z>', '<C-w>', { desc = 'Delete previous word' })
 
   -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
   -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
