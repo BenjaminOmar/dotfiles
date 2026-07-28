@@ -110,7 +110,7 @@ do
   vim.o.number = true
   -- You can also add relative line numbers, to help with jumping.
   --  Experiment for yourself to see if you like it!
-  -- vim.o.relativenumber = true
+  vim.o.relativenumber = true
 
   -- Enable mouse mode, can be useful for resizing splits for example!
   vim.o.mouse = 'a'
@@ -233,6 +233,15 @@ do
   vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
   vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
   vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+  -- Ctrl+s to save (disable terminal flow control first)
+  vim.api.nvim_create_autocmd('VimEnter', {
+    callback = function()
+      vim.fn.system('stty -ixon')
+    end,
+  })
+  vim.keymap.set({ 'n', 'i' }, '<C-s>', '<Esc>:w<CR>', { desc = 'Save file' })
+  vim.keymap.set('n', '<C-q>', ':q<CR>', { desc = 'Quit neovim' })
 
   -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
   -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
@@ -388,6 +397,31 @@ do
     styles = {
       comments = { italic = false }, -- Disable italics in comments
     },
+    on_colors = function(colors)
+      colors.bg = 'NONE'
+      colors.bg_dark = 'NONE'
+    end,
+    on_highlights = function(hl, c)
+      hl.Normal = { bg = 'NONE' }
+      hl.NormalFloat = { bg = 'NONE' }
+      hl.FloatBorder = { bg = 'NONE' }
+      hl.NormalSB = { bg = 'NONE' }
+      hl.CursorLineNr = { bg = 'NONE' }
+      hl.CursorLine = { bg = 'NONE' }
+      hl.SignColumn = { bg = 'NONE' }
+      hl.FoldColumn = { bg = 'NONE' }
+      hl.EndOfBuffer = { bg = 'NONE' }
+      hl.StatusLine = { bg = 'NONE' }
+      hl.StatusLineNC = { bg = 'NONE' }
+      hl.NeoTreeNormal = { bg = 'NONE' }
+      hl.NeoTreeNormalNC = { bg = 'NONE' }
+      hl.NeoTreeEndOfBuffer = { bg = 'NONE' }
+      hl.TelescopeNormal = { bg = 'NONE' }
+      hl.TelescopeBorder = { bg = 'NONE' }
+      hl.WhichKeyNormal = { bg = 'NONE' }
+      hl.LineNr = { fg = '#c4a7e7', bg = 'NONE' }
+      hl.CursorLineNr = { fg = '#e0def4', bg = 'NONE' }
+    end,
   }
 
   -- Load the colorscheme here.
@@ -704,6 +738,9 @@ do
     --
     -- But for many setups, the LSP (`ts_ls`) will work just fine
     -- ts_ls = {},
+
+    omnisharp = {}, -- C# language server
+    bicep = {}, -- Azure Bicep language server
 
     stylua = {}, -- Used to format Lua code
 
