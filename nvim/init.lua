@@ -171,6 +171,34 @@ do
   -- instead raise a dialog asking if you wish to save the current file(s)
   -- See `:help 'confirm'`
   vim.o.confirm = true
+
+  -- Automatically reload a buffer when its file is changed on disk externally
+  -- (e.g. by another editor, a build tool, or Claude Code).
+  -- `autoread` on its own only checks in a few situations, so we also run
+  -- `:checktime` on focus/buffer-enter/cursor-hold events to pick up changes
+  -- promptly while you are sitting in Neovim.
+  -- See `:help 'autoread'` and `:help :checktime`
+  vim.o.autoread = true
+  vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold', 'CursorHoldI' }, {
+    desc = 'Check for external file changes and reload if changed',
+    group = vim.api.nvim_create_augroup('kickstart-autoread', { clear = true }),
+    command = 'if mode() !=# "c" | checktime | endif',
+  })
+  -- Notify after a file was reloaded from disk, so unsaved edits aren't lost silently
+  vim.api.nvim_create_autocmd('FileChangedShellPost', {
+    desc = 'Notify when a file is reloaded after being changed externally',
+    group = vim.api.nvim_create_augroup('kickstart-autoread-notify', { clear = true }),
+    command = 'echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None',
+  })
+
+  -- Bicep supports both `//` and `/* */` comments; force the `//` line style so
+  -- `gc` / `gcc` (mini.comment) uses line comments instead of block comments.
+  vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'bicep',
+    callback = function()
+      vim.bo.commentstring = '// %s'
+    end,
+  })
 end
 
 -- ============================================================
@@ -741,7 +769,11 @@ do
     -- ts_ls = {},
 
     omnisharp = {}, -- C# language server
-    bicep = {}, -- Azure Bicep language server
+    -- Bicep language server. The base lspconfig config sets filetypes
+    -- ({ 'bicep', 'bicep-params' }) but no `cmd`; with mason-lspconfig's
+    -- automatic_enable disabled we must set it explicitly. `bicep-lsp` is
+    -- the Mason-installed wrapper that runs `dotnet Bicep.LangServer.dll`.
+    bicep = { cmd = { 'bicep-lsp' } }, -- Azure Bicep language server
 
     stylua = {}, -- Used to format Lua code
 
