@@ -27,6 +27,16 @@ config.inactive_pane_hsb = {
   brightness = 0.5,
 }
 
+-- Ctrl + double-click anywhere toggles fullscreen
+-- (plain double-click keeps default word-selection behavior)
+config.mouse_bindings = {
+  {
+    event = { Up = { streak = 2, button = "Left" } },
+    mods = "CTRL",
+    action = wezterm.action.ToggleFullScreen,
+  },
+}
+
 if is_windows then
   config.win32_system_backdrop = "Acrylic"
   config.window_background_opacity = 0.7
